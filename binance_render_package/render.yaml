@@ -1,0 +1,13 @@
+services:
+  - type: worker
+    name: binance-trading-bot
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python main.py"
+    autoDeploy: false
+
+  - type: static
+    name: binance-dashboard
+    env: static
+    buildCommand: ""
+    staticPublishPath: ./
